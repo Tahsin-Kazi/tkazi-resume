@@ -1,0 +1,70 @@
+name: Build & Deploy Resume
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least-privilege token scoped for Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deploy at a time; newer pushes supersede in-flight ones
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX -> PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          # Defaults to latexmk -> pdflatex, which matches \pdfgentounicode
+
+      - name: Assemble Pages site
+        run: |
+          mkdir -p site
+          cp main.pdf "site/Tahsin-Kazi-Resume.pdf"
+          cat > site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Tahsin Kazi — Resume</title>
+            <meta http-equiv="refresh" content="0; url=Tahsin-Kazi-Resume.pdf">
+            <link rel="canonical" href="Tahsin-Kazi-Resume.pdf">
+          </head>
+          <body>
+            <p>Redirecting to <a href="Tahsin-Kazi-Resume.pdf">Tahsin Kazi's resume</a>…</p>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages (auto-enable on first run)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

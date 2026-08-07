@@ -1,0 +1,227 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{bibentry}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Tahsin Kazi} \\ \vspace{3pt}
+    \small US Citizen $|$ {770-885-0180} $|$ tahsin.kazi35@gmail.com $|$ 
+    linkedin.com/in/tahsin-kazi
+\end{center}
+
+\vspace{-20pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {Bachelor of Science in Computer Science, GPA: 3.6}{Aug. 2024 -- May 2027}
+    \resumeSubheading
+      {Kennesaw State University}{Marietta, GA}
+      {Pursued: Bachelor of Science in Computer Science}{Aug. 2023 -- May 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+
+\vspace{-8pt}
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+            \resumeSubheading
+      {American Express}{June 2026 -- August 2026}
+      {Software Engineering Intern, Customer 360 Platform}{Sunrise, FL}
+      \resumeItemListStart
+        \resumeItem{Unified 3 request logging systems spanning Yugabyte, Postgres, and Kafka into a single observability system using OpenTelemetry and Vert.x; solving critical data fragmentation with automated tracing}
+        \resumeItem{Simplified debugging from manual use of Postman, OpenSearch, and scripts to a single React dashboard; deploying for a team of 100+ members on a platform handling all customer account requests and card issuance}
+        \resumeItem{Won 2nd of 70 teams globally at Amex's AI hackathon with SAGE: a LangGraph evalutation harness for building and testing agent tools; designed to save teams dozens of hours and millions of tokens}
+      \resumeItemListEnd
+
+        \resumeSubheading
+      {Demotu}{August 2025 -- December 2025}
+      {Software Engineer, Capstone Project}{Remote}
+      \resumeItemListStart
+        \resumeItem{Built an AI agent serving 1,000+ daily active users across trainers, gym chains, and pro sports teams; replacing manual forms for building and editing workouts with a single chat interface and real-time voice mode}
+        \resumeItem{Architected the system around a orchestrator \& verifier agent, parallel worker sub-agents, tool-calling for context (biometrics, progress reports, CV movement analysis), and vector search over 10k databased exercises}
+        \resumeItem{Tested and eliminated agent failures with an eval harness; turning conversation and vague prompts into deterministic, atomic operations with schema verification, version history, rollbacks, and error handling}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Kondra (Coca-Cola)}{May 2025 -- August 2025}
+      {Software Engineering Intern}{Sandy Springs, GA}
+      \resumeItemListStart
+        \resumeItem{Delivered 4 next-generation devices for Coca-Cola's supply chain, leveraging advanced technologies to validate their new distributed OS in 10 weeks; resulting in a permanent Digital Innovation display at their global HQ}
+        \resumeItem{Spearheaded an urgent request from AMC by concurrently developing a "Smart Shelf" for a critical cartridge management issue in just 5 weeks; leading to a visit from their CEO that started field-trials for production}
+        \resumeItem{Architected a low-latency, distributed system for all devices; integrating Java applications on Raspberry Pis with a real-time messaging protocol in C/C++ to manage ESP32s with firmware for LEDs, RFID, and LiDAR}
+        \resumeItem{Developed an animation engine in Java \& C++, featuring a layered rendering pipeline, compositing, physics simulations, API endpoints, and real-time events; achieving 80fps on 900 LEDs across 12 separate arrays}
+      \resumeItemListEnd
+
+          \resumeSubheading
+      {KSU IoT-as-a-Service Research Group}{August 2023 -- August 2024}
+      {ML Researcher}{Kennesaw, GA}
+      \resumeItemListStart
+        \resumeItem{Created "VitalCheck", a cuff-less blood pressure and breathing monitor that hits 90-97\% accuracy across 5 biomarkers, with sub-50ms inference from C++ signal processing and quantized TFLite models}
+        \resumeItem{First-authored a paper (AIME 2024) on results from a 6-month clinical trial on VitalCheck and GlucoCheck with 20+ patients; using an ETL pipeline to process 3,000+ CV images and 120hrs of time-series data}
+      \resumeItemListEnd
+
+      \resumeSubSubheading
+      {ML Research Intern}{May 2022 -- August 2022}
+      \resumeItemListStart
+        \resumeItem{First-authored a paper (EAI Pervasive Health 2022) on "GlucoCheck," a medical glucometer project I led as a high schooler, reaching 90\% clinical accuracy (10-20\% over related work) with infrared imaging and CV}
+      \resumeItemListEnd
+
+      \begin{comment}
+      \resumeSubheading
+      {Research Intern}{September 2021 -- May 2023}
+      {Kennesaw State University}{Kennesaw, GA}
+      \resumeItemListStart
+        \resumeItem{Built diabetes diagnosis and blood glucose time-series prediction models, averaging over 95\% accuracy}
+        \resumeItem{Cross-validated different model architectures with data collected from 50 participants}
+        \resumeItem{Deployed models to a web-application with data visualization and reinforcement-learning from feedback}
+        \resumeItem{Created databases for training food recognition and nutrition estimation models}
+        \resumeItem{First-authored a paper published in \href{https://link.springer.com/chapter/10.1007/978-3-031-34586-9_5}{\textbf{\underline{Springer Nature}}} and presented at EAI Pervasive Health 2022}
+      \resumeItemListEnd
+      \end{comment}
+
+  \resumeSubHeadingListEnd
+
+
+
+%
+%--------------PUBLICATIONS---------------
+
+% \vspace{-30pt}
+% \nobibliography{bib}
+% \bibliographystyle{abbrvnat}
+% \section{Publications}
+% \begin{enumerate}
+%     \item \bibentry{Kazi2024}
+%     \item \bibentry{Kazi2023}
+% \end{enumerate}
+ 
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, C/C++, Ruby, JavaScript, SQL, HTML/CSS} \\
+     \textbf{Libraries}{: React, Rails, Django, Pandas, PyTorch, OpenCV, TFLite, Numpy, Scipy} \\
+     \textbf{Software}{: Linux, Git, Docker, AWS (EC2, S3, Lambda), MySQL, InfluxDB, Grafana, Maven, Conda} \\
+     \textbf{Hardware}{: ESP32, Arduino, Raspberry Pi, Soldering, Wire Wrapping, 3D-Printing}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

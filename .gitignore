@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# LaTeX build artifacts (PDF is built in CI, not committed)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+main.pdf
